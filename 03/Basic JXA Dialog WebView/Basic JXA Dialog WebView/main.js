@@ -2,7 +2,7 @@
 //  main.js
 //  Basic JXA Dialog WebView
 //
-//  Created by uchcode on 2016/10/07.
+//  Created by uchcode.
 //  Copyright © 2016 uchcode. All rights reserved.
 //
 
