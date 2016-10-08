@@ -38,21 +38,26 @@ ObjC.registerSubclass({
         // Delegate methods
         
         'applicationWillFinishLaunching:': function(notification) {
-            let str = 'http://book.mynavi.jp/wd/widget/300x250.html'
-            let url = $.NSURL.alloc.initWithString(str)
-            let req = $.NSURLRequest.alloc.initWithURL(url)
-            let size = this.theWindow.contentView.frame.size
-            let conf = $.WKWebViewConfiguration.new
             
-            let webView = $.WKWebView.alloc.initWithFrameConfiguration($.NSZeroRect, conf)
-            //webView.autoresizingMask = $.NSViewWidthSizable | $.NSViewHeightSizable
-            webView.frame = $.NSMakeRect(0, 64, size.width, size.height - 64)
-            webView.loadRequest(req)
+            let address = 'http://book.mynavi.jp/wd/widget/300x250.html'
+            
+            let z = $.NSZeroRect
+            let c = $.WKWebViewConfiguration.new
+            let webView = $.WKWebView.alloc.initWithFrameConfiguration(z, c)
+            
+            let s = this.theWindow.contentView.frame.size
+            let w = s.width
+            let h = s.height
+            webView.frame = $.NSMakeRect(0, 64, w, h - 64)
+            
+            let u = $.NSURL.alloc.initWithString(address)
+            let r = $.NSURLRequest.alloc.initWithURL(u)
+            webView.loadRequest(r)
             
             this.theWindow.contentView.addSubview(webView)
+            
             this.theWindow.level = $.NSFloatingWindowLevel
             this.theWindow.center
-            
             App.activate()
         },
         
