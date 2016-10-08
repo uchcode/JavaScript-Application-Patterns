@@ -18,7 +18,4 @@ script AppDelegate
     on ok:sender
     end
     
-    on cancel:sender
-    end
-    
 end

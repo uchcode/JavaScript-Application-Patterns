@@ -35,14 +35,6 @@ ObjC.registerSubclass({
             },
         },
         
-        'cancel:': {
-            types: ['void', ['id']],
-            
-            implementation: function(sender) {
-                App.quit()
-            },
-        },
-        
         // Delegate methods
         
         'applicationWillFinishLaunching:': function(notification) {
