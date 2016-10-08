@@ -75,6 +75,7 @@ ObjC.registerSubclass({
         },
         
         'applicationShouldTerminate:': function(sender) {
+            // Insert code here to do any housekeeping before your application quits
             return $.NSTerminateNow
         },
         
