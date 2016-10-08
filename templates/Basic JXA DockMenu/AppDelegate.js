@@ -57,7 +57,7 @@ ObjC.registerSubclass({
             // Insert code here to initialize your application
         },
         
-        'applicationWillTerminate:': function(notification) {
+        'applicationWillTerminate:': function(sender) {
             // Insert code here to tear down your application
         },
         

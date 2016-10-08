@@ -38,11 +38,12 @@ ObjC.registerSubclass({
             // Insert code here to initialize your application
         },
         
-        'applicationWillTerminate:': function(notification) {
+        'applicationWillTerminate:': function(sender) {
             // Insert code here to tear down your application
         },
         
         'applicationShouldTerminate:': function(sender) {
+            // Insert code here to do any housekeeping before your application quits
             return $.NSTerminateNow
         },
         
