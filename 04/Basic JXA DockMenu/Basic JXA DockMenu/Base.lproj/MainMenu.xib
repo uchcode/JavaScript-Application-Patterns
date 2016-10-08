@@ -697,7 +697,7 @@
                 <menuItem title="Cancel" id="0F9-i4-jlr">
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <connections>
-                        <action selector="cancel:" target="Voe-Tx-rLC" id="979-KI-kAq"/>
+                        <action selector="cancel:" target="Voe-Tx-rLC" id="SXD-a5-F5g"/>
                     </connections>
                 </menuItem>
             </items>
