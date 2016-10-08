@@ -47,14 +47,17 @@ ObjC.registerSubclass({
         
         // Delegate methods
         
+        'applicationShouldHandleReopen:hasVisibleWindows:': function(sender, flag) {
+            App.displayAlert('Reopen')
+            return true
+        },
+        
         'applicationWillFinishLaunching:': function(notification) {
-            this.theWindow.center
-            this.theWindow.level = $.NSFloatingWindowLevel
-            App.activate()
+            // Insert code here to initialize your application before any files are opened
         },
         
         'applicationDidFinishLaunching:': function(notification) {
-            // Insert code here to initialize your application
+            App.displayAlert('Launched')
         },
         
         'applicationWillTerminate:': function(sender) {
@@ -62,6 +65,7 @@ ObjC.registerSubclass({
         },
         
         'applicationShouldTerminate:': function(sender) {
+            // Insert code here to do any housekeeping before your application quits
             return $.NSTerminateNow
         },
         
