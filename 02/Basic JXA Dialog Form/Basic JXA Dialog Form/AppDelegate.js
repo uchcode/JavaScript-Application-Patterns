@@ -30,8 +30,8 @@ ObjC.registerSubclass({
             types: ['void', ['id']],
             
             implementation: function(sender) {
-                //App.quit()
                 App.displayAlert('OK')
+                $.NSApp.terminate(this)
             },
         },
         
@@ -39,8 +39,8 @@ ObjC.registerSubclass({
         
         'applicationWillFinishLaunching:': function(notification) {
             this.theWindow.center
-            this.theWindow.level = $.NSFloatingWindowLevel
             App.activate()
+            $.NSApp.runModalForWindow(this.theWindow)
         },
         
         'applicationDidFinishLaunching:': function(notification) {

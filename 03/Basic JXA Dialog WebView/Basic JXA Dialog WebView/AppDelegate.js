@@ -31,7 +31,7 @@ ObjC.registerSubclass({
             types: ['void', ['id']],
             
             implementation: function(sender) {
-                App.quit()
+                $.NSApp.terminate(this)
             },
         },
         
@@ -56,9 +56,9 @@ ObjC.registerSubclass({
             
             this.theWindow.contentView.addSubview(webView)
             
-            this.theWindow.level = $.NSFloatingWindowLevel
             this.theWindow.center
             App.activate()
+            $.NSApp.runModalForWindow(this.theWindow)
         },
         
         'applicationDidFinishLaunching:': function(notification) {
