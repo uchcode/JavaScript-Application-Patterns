@@ -700,10 +700,11 @@
                     </textField>
                 </subviews>
             </view>
+            <point key="canvasLocation" x="140" y="766"/>
         </window>
         <menu id="s1o-jC-fri">
             <items>
-                <menuItem title="Greeting" id="of8-oE-8Qb">
+                <menuItem title="Custom view" id="of8-oE-8Qb">
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <connections>
                         <outlet property="view" destination="JfS-7Y-NsN" id="DYh-wu-oha"/>
