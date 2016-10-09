@@ -12,7 +12,7 @@ ObjC.registerSubclass({
     
     name      : 'AppDelegate',
     superclass: 'NSObject',
-    protocols : ['NSApplicationDelegate'],
+    protocols : ['NSApplicationDelegate', 'NSMenuDelegate'],
     
     properties: {
         
@@ -57,13 +57,24 @@ ObjC.registerSubclass({
             },
         },
         
-        // Delegate methods
+        // NSMenuDelegate methods
+        
+        'menuWillOpen:': function(notification) {
+            $.NSLog("menuWillOpen")
+        },
+        
+        'menuDidClose:': function(notification) {
+            $.NSLog("menuDidClose")
+        },
+        
+        // NSApplicationDelegate methods
         
         'applicationWillFinishLaunching:': function(notification) {
-            this.theWindow.center
             this.statusItem = $.NSStatusBar.systemStatusBar.statusItemWithLength($.NSVariableStatusItemLength)
-            this.statusItem.menu = this.statusMenu
             this.statusItem.title = '🐱'
+            this.statusItem.menu = this.statusMenu
+            this.statusMenu.delegate = this
+            this.theWindow.center
         },
         
         'applicationDidFinishLaunching:': function(notification) {
